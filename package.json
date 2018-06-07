@@ -1,0 +1,27 @@
+{
+  "name": "jayce",
+  "version": "0.1.0",
+  "description": "a real-time and single page app framework base on websocket",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Houserqu/jayce.git"
+  },
+  "keywords": [
+    "jayce",
+    "websocket",
+    "spa"
+  ],
+  "author": "houserqu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Houserqu/jayce/issues"
+  },
+  "homepage": "https://github.com/Houserqu/jayce#readme"
+}
