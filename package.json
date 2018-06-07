@@ -1,5 +1,5 @@
 {
-  "name": "jayce",
+  "name": "jayce-fe",
   "version": "0.1.0",
   "description": "a real-time and single page app framework base on websocket",
   "main": "index.js",
