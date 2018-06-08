@@ -1,1 +1,3 @@
-module.exports = require('./lib/jayce');
+import jayce from './lib/jayce';
+
+export default jayce

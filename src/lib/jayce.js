@@ -33,7 +33,7 @@ function Jayce(store, option) {
       },
       body: data
     }
-    ws.send(JSON.stringify(send));
+    this.send(JSON.stringify(send));
   }
 
   // 发送 订阅型消息
@@ -46,7 +46,7 @@ function Jayce(store, option) {
       },
       body: action
     }
-    ws.send(JSON.stringify(send));
+    this.send(JSON.stringify(send));
   }
 
   this.unsubscribe = function(action) {
@@ -58,8 +58,29 @@ function Jayce(store, option) {
       },
       body: action
     }
-    ws.send(JSON.stringify(send));
+    this.send(JSON.stringify(send));
   }
+
+  this.send = function(message, callback){
+    this.waitForConnection(function () {
+      ws.send(message);
+      if (typeof callback !== 'undefined') {
+        callback();
+      }
+    }, 1000);
+  }
+
+  this.waitForConnection = function (callback, interval) {
+    if (ws.readyState === 1) {
+      callback();
+    } else {
+      var that = this;
+      // optional: implement backoff for interval here
+      setTimeout(function () {
+        that.waitForConnection(callback, interval);
+      }, interval);
+    }
+  };
 
   Jayce.instance = this;
 }
