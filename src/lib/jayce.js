@@ -1,7 +1,6 @@
 import history from './history';
 import reducer from './reducer';
 import messageParser from './messageParser';
-import subscribe from './subscribe';
 
 function Jayce(store, option) {
 
@@ -68,4 +67,3 @@ function Jayce(store, option) {
 export default Jayce;
 export const createJayceHistory = history;
 export const jayceReducer = reducer;
-export const jaycesubscribe = subscribe ;
